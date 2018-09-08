@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.lang.reflect.Field;
 
-@EnableOAuth2Sso
 @Controller
 class SimpleAppController {
 
