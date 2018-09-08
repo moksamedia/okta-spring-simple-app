@@ -1,4 +1,4 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <!--/*/ <th:block th:include="fragments/head :: head"/> /*/-->
 </head>
@@ -11,16 +11,13 @@
             </div>
 
             <!--/* displayed if account IS NOT null, indicating that the user IS logged in */-->
-            <div th:if="${account}">
-                <h1 th:inline="text">Hello, [[${account.fullName}]]!</h1>
-                <form method="post" th:action="@{/logout}">
-                    <a href="/restricted" class="btn btn-primary">Restricted</a>
-                    <input type="submit" class="btn btn-danger" value="Logout"/>
-                </form>
+            <div th:if="${#authorization.expression('isAuthenticated()')}">
+                <h1 th:inline="text">Hello, <span th:text="${#authentication.name}"></span>!</h1>
+                <a href="/restricted" class="btn btn-primary">Restricted</a>
             </div>
 
             <!--/* displayed if account IS null, indicating that the user IS NOT logged in */-->
-            <div th:unless="${account}">
+            <div th:unless="${#authorization.expression('isAuthenticated()')}">
                 <h1>Who are you?</h1>
                 <a href="/restricted" class="btn btn-primary">Restricted</a>
             </div>

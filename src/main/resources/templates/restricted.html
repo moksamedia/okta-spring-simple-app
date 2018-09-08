@@ -1,4 +1,4 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <!--/*/ <th:block th:include="fragments/head :: head"/> /*/-->
 </head>
@@ -12,12 +12,12 @@
 
 
             <!--/* displayed if account IS NOT null, indicating that the user IS logged in */-->
-            <div th:if="${account}">
-                <h1 th:inline="text">[[${account.fullName}]], You are allowed here.</h1>
+            <div th:if="${#authorization.expression('isAuthenticated()')}">
+                <h1 th:inline="text"><span th:text="${#authentication.name}"></span>, You are allowed here.</h1>
             </div>
 
             <!--/* displayed if account IS null, indicating that the user IS NOT logged in */-->
-            <div th:unless="${account}">
+            <div th:unless="${#authorization.expression('isAuthenticated()')}">
                 <h1>How did you get here, anonymous?!</h1>
             </div>
 
