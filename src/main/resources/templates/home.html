@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--/*/ <th:block th:include="fragments/head :: head"/> /*/-->
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="box col-md-6 col-md-offset-3">
+            <div class="okta-header">
+                <img src="img/logo.png"/>
+            </div>
+
+            <!--/* displayed if account IS NOT null, indicating that the user IS logged in */-->
+            <div th:if="${account}">
+                <h1 th:inline="text">Hello, [[${account.fullName}]]!</h1>
+                <form method="post" th:action="@{/logout}">
+                    <a href="/restricted" class="btn btn-primary">Restricted</a>
+                    <input type="submit" class="btn btn-danger" value="Logout"/>
+                </form>
+            </div>
+
+            <!--/* displayed if account IS null, indicating that the user IS NOT logged in */-->
+            <div th:unless="${account}">
+                <h1>Who are you?</h1>
+                <a href="/restricted" class="btn btn-primary">Restricted</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

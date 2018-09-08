@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  resources:
+    static-locations: "classpath:/static/"
+
+security:
+  oauth2:
+    client:
+      # From OIDC app
+      clientId: 0oag58489amZL0MEN0h7
+      clientSecret: MJwacxENV745lGP5bOvQDM_bh194juxt7Ir_ua3A
+      # From Authorization Server's metadata
+      accessTokenUri: https://dev-533919.oktapreview.com/oauth2/default/v1/token
+      userAuthorizationUri: https://dev-533919.oktapreview.com/oauth2/default/v1/authorize
+      clientAuthenticationScheme: form
+      scope: openid profile email
+    resource:
+      # from your Auth Server's metadata, check .well-known/openid-configuration if not in .well-known/oauth-authorization-server
+      userInfoUri: https://dev-533919.oktapreview.com/oauth2/default/v1/userinfo
