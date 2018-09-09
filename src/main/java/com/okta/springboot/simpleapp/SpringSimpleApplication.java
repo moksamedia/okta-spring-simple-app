@@ -1,4 +1,4 @@
-package com.okta.springmfa.SpringMFA;
+package com.okta.springboot.simpleapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
