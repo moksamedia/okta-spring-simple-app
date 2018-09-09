@@ -1,4 +1,4 @@
-package com.okta.springmfa.SpringMFA;
+package com.okta.springboot.simpleapp;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
