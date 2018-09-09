@@ -5,14 +5,9 @@ spring:
   resources:
     static-locations: "classpath:/static/"
 
-security:
+okta:
   oauth2:
-    client:
-      clientId: 0oag58489amZL0MEN0h7
-      clientSecret: MJwacxENV745lGP5bOvQDM_bh194juxt7Ir_ua3A
-      accessTokenUri: https://dev-533919.oktapreview.com/oauth2/default/v1/token
-      userAuthorizationUri: https://dev-533919.oktapreview.com/oauth2/default/v1/authorize
-      clientAuthenticationScheme: form
-      scope: openid profile email
-    resource:
-      userInfoUri: https://dev-533919.oktapreview.com/oauth2/default/v1/userinfo
+    issuer: https://dev-533919.oktapreview.com/oauth2/default
+    clientId: 0oag58489amZL0MEN0h7
+    clientSecret: MJwacxENV745lGP5bOvQDM_bh194juxt7Ir_ua3A
+    rolesClaim: groups
