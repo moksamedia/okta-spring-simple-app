@@ -1,4 +1,4 @@
-package com.okta.springmfa.SpringMFA;
+package com.okta.springboot.simpleapp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.okta.springmfa.SpringMFA;
+package com.okta.springboot.simpleapp;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;

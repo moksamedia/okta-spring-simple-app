@@ -1,4 +1,4 @@
-package com.okta.springmfa.SpringMFA;
+package com.okta.springboot.simpleapp;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
