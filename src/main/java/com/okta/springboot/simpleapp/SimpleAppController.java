@@ -11,16 +11,18 @@ class SimpleAppController {
     
     @RequestMapping("/")
     String home() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return "home";
     }
 
     @RequestMapping("/restricted")
-    @PreAuthorize("hasAuthority('Admin')")
     String restricted() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String currentPrincipalName = authentication.getName();
         return "restricted";
+    }
+
+    @RequestMapping("/admin")
+    @PreAuthorize("hasAuthority('Admin')")
+    String admin() {
+        return "admin";
     }
 
 }
